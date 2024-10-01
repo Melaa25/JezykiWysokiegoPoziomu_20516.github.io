@@ -167,11 +167,26 @@
 					document.write('<p>Pierwszy element to <strong>');
 					document.write(nowaTablica[0] + '</strong></p>');
 				</script>
+				
+				<button id="showMyData">Pokaż dane dane</button>
 
 				<script>
-					const formsCounter = document.scripts.length;
-					document.write('<p>Ilość elementow na stronie <strong>');
-					document.write(formsCounter + '</strong></p>');
+					const mainSection = document.getElementById("main-page"); 
+					const paragraph1 = document.createElement("p"); 
+					paragraph1.id = "imie-paragraph";
+					const paragraph2 = document.createElement("p"); 
+					paragraph2.id = "nazwisko-paragraph";
+					paragraph1.textContent = "Emilia";
+					paragraph2.textContent = "Massowa";
+					mainSection.appendChild(paragraph1);  
+					mainSection.appendChild(paragraph2);  
+					function showData() {
+						const imie = document.getElementById("imie-paragraph").textContent;
+						const nazwisko = document.getElementById("nazwisko-paragraph").textContent;
+
+						alert(`Moje dane: ${imie} ${nazwisko}`);
+					}
+					document.getElementById("showMyData").onclick = showData;
 				</script>
 
 			</div>
