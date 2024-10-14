@@ -1,21 +1,26 @@
-//Zad 2
-/*
-const fs = require("fs");
-const data = fs.readFileSync('package.json');
 
-console.log("Początek skryptu.");
-console.log(data.toString());
-console.log("Koniec skryptu.");
-*/
+//Zad 3
 
-const fs = require("fs");
+const http=require('http');
+const path= require("path");
+const util= require("util");
+const v8= require("v8");
 
-console.log("Początek skryptu.");
+const hostname='127.0.0.1';
+const port = 8888;
 
-fs.readFile('package.json', function(err,data){
-    if(err) return console.error(err);
-    console.log(data.toString());
+const server= http.createServer((request,response)=>{
+    response.statusCode=200;
+    response.setHeader('Constent-Type','text/plain');
+    response.end('Hello, from node.js serwer!\n');
 });
 
-console.log("Koniec skryptu.");
+
+
+server.listen(port,hostname,()=>{
+    util.log(v8.getHeapStatistics());
+    console.log(path.basename(__filename));
+    util.log(path.join(__dirname,'uploads','images'));
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
 
