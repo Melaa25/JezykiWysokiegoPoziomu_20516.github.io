@@ -1,0 +1,15 @@
+{
+  "name": "massowaemilialabjs",
+  "version": "1.0.0",
+  "description": "lab3",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emilia Massowa",
+  "license": "ISC",
+  "dependencies": {
+    "dedent": "^1.5.3"
+  }
+}
