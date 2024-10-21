@@ -1,23 +1,34 @@
 
-//Zad 4
-import dedent from "dedent";
+import http from 'http';
+import fs from 'fs';
 
-function Przyklad() {
-	const first = dedent`Nic dwa razy się nie zdarza
-                                i nie zdarzy. Z tej przyczyny
-    zrodziliśmy się bez wprawy
-                            i pomrzemy bez rutyny.`;
-
-	const second = dedent`
-    Choćbyśmy uczniami byli
-         najtępszymi w szkole świata,
-             nie będziemy repetować
-                żadnej zimy ani lata. 
-  `;
+const server = http.createServer(function (req, res) {
+    getTitles(res);
+   }).listen(8000, "127.0.0.1");
 
 
-	return first + "\n\n" + second + "\n\n";
-}
+   function getTitles(res) {
+    fs.readFile('./titles.json', function (err, data) {
+    if (err) return hadError(err, res); 
+    getTemplate(JSON.parse(data.toString()), res);
+    });
+   }
 
-console.log(Przyklad());
-console.log("Moduł dzieli długiego stinga na kilka lini zgodnie z tym jak jest napisany w kodzie. Dzięki czemu łatwiej jest odczytywać długie stringi.");
+
+   function getTemplate(titles, res) {
+    fs.readFile('./template.html', function (err, data) {
+    if (err) return hadError(err, res);
+    formatHtml(titles, data.toString(), res);
+    });
+   }
+
+   function formatHtml(titles, tmpl, res) {
+    let html = tmpl.replace('%', titles.join('</li><li>'));
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end(html);
+   }
+
+   function hadError(err, res) {
+    console.error(err);
+    res.end('Error');
+   }
