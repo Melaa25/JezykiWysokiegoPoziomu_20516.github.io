@@ -1,32 +1,19 @@
-let currency = require('./currency1');
 
-console.log('1 wersja modulu:')
-console.log('50 euro odpowiada następującej ilości polskich złotówek:');
-console.log(currency.euroToZl(50));
-console.log('50 jenów odpowiada następującej ilości polskich złotówek:');
-console.log(currency.jenToZl(50));
-console.log('50 dolarów amerykańskich odpowiada następującej ilości polskich złotówek:');
-console.log(currency.dolarUSToZl(50));
-console.log('50 funtow brytyjskich odpowiada następującej ilości polskich złotówek:');
-console.log(currency.funtToZl(50));
-console.log('50 koron szwedzkich odpowiada następującej ilości polskich złotówek:');
-console.log(currency.koronaToZl(50));
+let math1 = require('./mathModule1');
 
-console.log('\n2 wersja modulu:')
-let Currency = require ('./currency2');
-let euro = 4.35;
-let jen = 0.03;
-let dolarUS = 4.02;
-let funt = 5.21;
-let koronaSzw =0.38;
-let currency1 = new Currency (euro, jen, dolarUS, funt, koronaSzw);
-console.log('Euro na zl:');
-console.log(currency1.euroToZL(50));
-console.log('Jen na zl: ');
-console.log(currency1.jenToZL(50));
-console.log('Dolar amerykanski na zl: ');
-console.log(currency1.dolarToZL(50));
-console.log('Funt brytyjski na zl: ');
-console.log(currency1.funtToZL(50));
-console.log('Korona szwedzka na zl: ');
-console.log(currency1.koronaToZL(50));
+console.log('1 wersja modułu (z obiektu exports):');
+console.log('Dodawanie 5 + 3:', math1.add(5, 3));
+console.log('Odejmowanie 5 - 3:', math1.subtract(5, 3));
+console.log('Mnożenie 5 * 3:', math1.multiply(5, 3));
+console.log('Dzielenie 5 / 3:', math1.divide(5, 3));
+console.log('Potęgowanie 5^3:', math1.power(5, 3));
+
+console.log('\n2 wersja modułu (podejście obiektowe):');
+let MathModule = require('./mathModule2');
+let math2 = new MathModule();
+
+console.log('Dodawanie 5 + 3:', math2.add(5, 3));
+console.log('Odejmowanie 5 - 3:', math2.subtract(5, 3));
+console.log('Mnożenie 5 * 3:', math2.multiply(5, 3));
+console.log('Dzielenie 5 / 3:', math2.divide(5, 3));
+console.log('Potęgowanie 5^3:', math2.power(5, 3));
