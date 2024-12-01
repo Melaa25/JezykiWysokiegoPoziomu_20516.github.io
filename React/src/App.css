@@ -1,16 +1,132 @@
-.App {
+/* Globalne style */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Nawigacja główna */
+nav {
+  background-color: #0078d7;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffdd57;
+}
+
+/* Nagłówki sekcji */
+h1, h2 {
   text-align: center;
-  padding: 20px;
-  font-family: Arial, sans-serif;
+  margin-top: 2rem;
+  color: #333;
 }
 
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
+/* Karty zawartości */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.container h2 {
+  margin-top: 0;
+  color: #0078d7;
+}
+
+/* Formularz kontaktowy */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #0078d7;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-p {
-  margin: 10px 0;
+form button:hover {
+  background-color: #005bb5;
+}
+
+/* Linki w sekcjach */
+.container nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 1rem 0;
+  list-style: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.container nav ul li a {
+  text-decoration: none;
+  color: #0078d7;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.container nav ul li a:hover {
+  color: #005bb5;
+}
+
+/* Styl dla strony 404 */
+.not-found {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  color: #ff4d4d;
+}
+
+.not-found p {
+  font-size: 1.2rem;
 }

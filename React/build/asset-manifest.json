@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/JezykiWysokiegoPoziomu_20516.github.io/static/css/main.4ed22170.css",
-    "main.js": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/main.9a00b54c.js",
-    "static/js/453.2f3c370c.chunk.js": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/453.2f3c370c.chunk.js",
+    "main.css": "/JezykiWysokiegoPoziomu_20516.github.io/static/css/main.71ad0ac7.css",
+    "main.js": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/main.34e07d10.js",
+    "static/js/453.9693d864.chunk.js": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/453.9693d864.chunk.js",
     "index.html": "/JezykiWysokiegoPoziomu_20516.github.io/index.html",
-    "main.4ed22170.css.map": "/JezykiWysokiegoPoziomu_20516.github.io/static/css/main.4ed22170.css.map",
-    "main.9a00b54c.js.map": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/main.9a00b54c.js.map",
-    "453.2f3c370c.chunk.js.map": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/453.2f3c370c.chunk.js.map"
+    "main.71ad0ac7.css.map": "/JezykiWysokiegoPoziomu_20516.github.io/static/css/main.71ad0ac7.css.map",
+    "main.34e07d10.js.map": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/main.34e07d10.js.map",
+    "453.9693d864.chunk.js.map": "/JezykiWysokiegoPoziomu_20516.github.io/static/js/453.9693d864.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ed22170.css",
-    "static/js/main.9a00b54c.js"
+    "static/css/main.71ad0ac7.css",
+    "static/js/main.34e07d10.js"
   ]
 }
