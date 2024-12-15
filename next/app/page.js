@@ -1,18 +1,9 @@
-
-
-import PageTitle from '@/components/PageTitle';
-import Button from '@/components/Button';
-
 export default function Home() {
- 
-
   return (
-    <div className="page-container">
-      <PageTitle title="O mnie" />
-      <p>
-        Cześć! Mam na imię Emilia i jestem studentką trzeciego roku informatyki w ANS Elbląg.
-      </p>
-     
-    </div>
+    <main>
+      <h1 style={{ color: 'white', textAlign: 'center' }}>
+        Laboratorium nr 11 - projekt startowy
+      </h1>
+    </main>
   );
 }
