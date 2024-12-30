@@ -1,63 +1,75 @@
-export default function SharePage() {
-    return (
-      <main style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', fontFamily: 'Arial, sans-serif' }}>
-        <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Share a Meal</h1>
-        <p style={{ textAlign: 'center', marginBottom: '30px' }}>
-          Podziel się swoim ulubionym posiłkiem z innymi! Wypełnij poniższy formularz.
-        </p>
-  
-        <form
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            backgroundColor: '#f9f9f9',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          <label htmlFor="mealName">Nazwa posiłku:</label>
+'use client';
+
+import BackToHomeButton from '@/components/BackToHomeButton';
+import { useState } from 'react';
+
+export default function ShareMealPage() {
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    creator: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form data submitted:', formData);
+    alert('Your meal has been shared!');
+    setFormData({ title: '', description: '', creator: '' });
+  };
+
+  return (
+    <main style={{ maxWidth: '600px', margin: '2rem auto', padding: '1rem', background: '#fff', borderRadius: '8px' }}>
+      <h1>Share Your Meal</h1>
+      <form onSubmit={handleSubmit}>
+        <div style={{ marginBottom: '1rem' }}>
+          <label htmlFor="title" style={{ display: 'block', marginBottom: '.5rem' }}>Meal Title</label>
           <input
-            id="mealName"
             type="text"
-            placeholder="Wpisz nazwę posiłku"
-            style={{
-              padding: '8px',
-              border: '1px solid #ccc',
-              borderRadius: '5px',
-            }}
+            id="title"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+            style={{ width: '100%', padding: '.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
           />
-  
-          <label htmlFor="mealDescription">Opis posiłku:</label>
+        </div>
+
+        <div style={{ marginBottom: '1rem' }}>
+          <label htmlFor="description" style={{ display: 'block', marginBottom: '.5rem' }}>Description</label>
           <textarea
-            id="mealDescription"
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            required
             rows="4"
-            placeholder="Dodaj krótki opis posiłku..."
-            style={{
-              padding: '8px',
-              border: '1px solid #ccc',
-              borderRadius: '5px',
-              resize: 'none',
-            }}
+            style={{ width: '100%', padding: '.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
           ></textarea>
-  
-          <button
-            type="submit"
-            style={{
-              padding: '10px',
-              backgroundColor: '#0070f3',
-              color: '#fff',
-              border: 'none',
-              borderRadius: '5px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-            }}
-          >
-            Udostępnij
-          </button>
-        </form>
-      </main>
-    );
-  }
-  
+        </div>
+
+        <div style={{ marginBottom: '1rem' }}>
+          <label htmlFor="creator" style={{ display: 'block', marginBottom: '.5rem' }}>Your Name</label>
+          <input
+            type="text"
+            id="creator"
+            name="creator"
+            value={formData.creator}
+            onChange={handleChange}
+            required
+            style={{ width: '100%', padding: '.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
+        </div>
+
+        <button type="submit" style={{ padding: '0.75rem 1.5rem', background: '#ff8a05', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}>
+          Share Meal
+        </button>
+      </form>
+      <BackToHomeButton />
+    </main>
+  );
+}
